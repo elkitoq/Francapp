@@ -1,0 +1,74 @@
+body{
+    overflow: hidden;
+}
+
+.row-search {
+    align-items: center;
+}
+
+.row-search .search-group .input-search{
+    margin-top: 1rem;
+    height: 2rem;
+    width: 30rem;
+    border: none;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.row-search .search-group .input-search .button-search{
+    background-color: rgba(255, 255, 255, 0);
+    height: 2rem;
+    margin-top: 0.5rem;
+    opacity: 1;
+    border: none;
+
+}
+
+.row-search .search-group .input-search .button-search:hover{
+    background-color: #53db5a;
+    border: none;
+    opacity: 0.7;
+}
+
+.band-yellow{
+    background-color: #FFD500;
+    border-width: 1px;
+    box-shadow: 0px 3px 6px #72717129;
+    border-radius: 6px;
+    margin-right: 0;
+}
+
+.content-newOrder{
+    padding: 5px;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    height: 57vh;
+}
+
+.content-newOrder .labels-newOrder{
+    box-shadow: 0px 2px 6px 0px #00000012;
+    
+}
+
+.content-newOrder .labels-newOrder .form-labels{
+    margin-top: 2.6rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+   
+}
+
+.content-newOrder .content-input-newOrder .form-input{
+    margin-top: 2.7rem;
+}
+
+.content-newOrder .content-input-newOrder .form-input input{
+    margin-bottom: 0.5rem;
+}
+
+.content-newOrder .content-input-newOrder button{
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    border-radius: 6px;
+    width: 40%;
+}

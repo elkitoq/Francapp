@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.col-sidebar{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffff;
+    box-shadow: 0px 2px 6px #00000012;
+
+}
+
+.logo-img{
+    padding: 5px;
+    width: 100%;   
+}
+
+.col-sidebar .sidebar a {
+    padding: auto;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.col-sidebar .sidebar a:hover{
+    text-decoration: none;
+    border-right: solid;
+    border-color: #11C9B7;
+    border-width: 4px;
+}
+
+.col-sidebar .sidebar a img{
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
