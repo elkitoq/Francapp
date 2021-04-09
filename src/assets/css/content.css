@@ -37,18 +37,23 @@ body{
     box-shadow: 0px 3px 6px #72717129;
     border-radius: 6px;
     margin-right: 0;
+    padding: 0;
 }
 
 .content-newOrder{
+    width: 70%;
     padding: 5px;
+    padding-right: 5px;
     margin-top: 5rem;
     margin-left: 5rem;
+    margin-right: 5rem;
     height: 57vh;
+    box-shadow: 0px 2px 6px 0px #00000012;
+    border-radius: 6px;
 }
 
 .content-newOrder .labels-newOrder{
-    box-shadow: 0px 2px 6px 0px #00000012;
-    
+    margin-left: 1rem;
 }
 
 .content-newOrder .labels-newOrder .form-labels{
