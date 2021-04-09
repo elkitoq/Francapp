@@ -12,7 +12,7 @@ export const Calendar = () => {
                 </Col>
                 <Col xs="2">
                     <div>
-                        Calendar
+
                     </div>
                 </Col>
             </Row>
