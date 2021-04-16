@@ -1,68 +1,91 @@
 import { Row, Col, Form, Input, Button } from 'reactstrap'
 import { FormLabel } from './FormLabel.js'
+import LocalBase from 'localbase'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
-
+import moment from 'moment'
 
 export const NewOrder = () => {
 
+    let db = new LocalBase('db')
     const MySwal = withReactContent(Swal)
 
-    const guardardatos = ()=>{
+    async function addWorkOrder() {
+        if (document.getElementById('nombre').value.length !== 0) {
+            if (document.getElementById('email').value.length !== 0 && document.getElementById('email').value.includes('@') && document.getElementById('email').value.includes('.com')) {
+                if (document.getElementById('numberCel').value.length !== 0) {
+                    if (document.getElementById('equipo').value.length !== 0) {
+                        if (document.getElementById('problema').value.length !== 0) {
 
-       const nombre = document.getElementById('nombre').value;
-       const email = document.getElementById('email').value;
-       const numberCel = document.getElementById('numberCel').value;
-       const problemaEquipo = document.getElementById('problema').value;
+                            await addWorkOrdertoDb();
 
-        const newWork = {
-            nombre: '',
-            email: '',
-            numeroTelefono: '',
-            problemaEquipo: ''
-        }
+                            MySwal.fire(
+                                {
+                                    icon: 'success',
+                                    title: 'Good job!',
+                                    text: 'Tarea creada corectamente!',
+                                    showConfirmButton: true,
+                                    timer: 5000
+                                }
+                            )
 
-        if(nombre.length !== 0){
-            if(email.length !==0 ){
-                if(numberCel.length !== 0){
-                    if(problemaEquipo.length !== 0){
-                        newWork.nombre = nombre;
-                        newWork.email = email;
-                        newWork.numeroTelefono = numberCel;
-                        newWork.problemaEquipo = problemaEquipo;
-
-                        MySwal.fire({
-                            title: <p>Hello World</p>,
-                            footer: 'Copyright 2018',
-                            didOpen: () => {
-                              // `MySwal` is a subclass of `Swal`
-                              //   with all the same instance & static methods
-                              MySwal.clickConfirm()
-                            }
-                          }).then(() => {
-                            return MySwal.fire(<p>Tarea Guardada con exito</p>)
-                          })
-                        console.log(newWork)
-                        
+                        }
                     }
                 }
             }
-            
-        }else{
-            MySwal.fire({
-                title: <p>Hello World</p>,
-                footer: 'Copyright 2018',
-                didOpen: () => {
-                  // `MySwal` is a subclass of `Swal`
-                  //   with all the same instance & static methods
-                  MySwal.clickConfirm()
+        } else {
+            MySwal.fire(
+                {
+                    icon: 'error',
+                    title: 'Algo salio mal!',
+                    text: 'Verifique que todos los campos esten completos correctamente!',
+                    showConfirmButton: true,
+                    timer: 5000
                 }
-              }).then(() => {
-                return MySwal.fire(<p>Complete todos los campos correctamente antes de proseguir!</p>)
-              })
+            )
         }
-        
+
+    }
+
+    async function addWorkOrdertoDb() {
+        let id = makeid();
+        let checkid = await checkById(id);
+        while (checkid === true) {
+            id = makeid();
+            checkid = await checkById(id)
+        }
+        await db.collection('workorder').add({
+            id: id,
+            name: document.getElementById('nombre').value,
+            email: document.getElementById('email').value,
+            numberCel: document.getElementById('numberCel').value,
+            equipo: document.getElementById('equipo').value,
+            date: moment().format('LL'),
+            problemaEquipo: document.getElementById('problema').value
+        })
+    }
+
+    function makeid() {
+        let length = 5
+        var result = [];
+        var characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+            result.push(characters.charAt(Math.floor(Math.random() *
+                charactersLength)));
+        }
+        return result.join('');
+    }
+
+    async function checkById(id) {
+        let result = await db.collection('workorder').doc({ id: id }).get()
+
+        if (typeof (result) === 'object') {
+            return true
+        }
+        else {
+            return false
+        }
     }
 
     return (
@@ -85,8 +108,7 @@ export const NewOrder = () => {
                     <Input type="text" name="equipo" id="equipo" />
                     <Input type="textarea" name="problema" id="problema" />
                     <Button className="btn-cancelar" >Cancelar</Button>
-                    <Button className="btn-crear" onClick={guardardatos}>Crear</Button>
-                    
+                    <Button className="btn-crear" onClick={addWorkOrder}>Crear</Button>
                 </Form>
             </Col>
         </Row>

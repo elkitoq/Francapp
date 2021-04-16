@@ -7,12 +7,12 @@ export const Calendar = () => {
             <Row>
                 <Col xs="4">
                     <div>
-                        Calendar
+                        Calendar copado
                     </div>
                 </Col>
                 <Col xs="2">
                     <div>
-                        Calendar
+
                     </div>
                 </Col>
             </Row>

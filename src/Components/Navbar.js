@@ -8,8 +8,8 @@ export const Navbar = () => {
         <Row className="row-search">
             <Col sm={{ size: 6, order: 2, offset: 1 }}>
                 <InputGroup className="search-group" size="lg">
-                    <Input className="input-search" />
-                    <Button className="button-search" color="light" size="sm"><img src={lupa} width="20px" height="20px" /></Button>
+                    <Input className="input-search" placeholder="Buscar" />
+                    <Button className="button-search" color="light" ><img src={lupa} alt="search" width="20px" height="20px" /></Button>
                 </InputGroup>
             </Col>
         </Row>

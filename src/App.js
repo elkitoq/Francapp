@@ -19,7 +19,7 @@ function App() {
           <Sidebar />
           <Col>
             <Navbar />
-            <Route path="/NewOrder" exact="true" component={NewOrder} />
+            <Route path="/" exact="true" component={NewOrder} />
             <Route path="/Workorders" exact="true" component={Workorders} />
             <Route path="/Calendar" exact="true" component={Calendar} />
             <Route path="/Options" exact="true" component={Options} />

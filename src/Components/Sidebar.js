@@ -21,7 +21,7 @@ export const Sidebar = () => {
                     <img className="logo-img" src={logo} height="150px" alt="" />
                 </div>
                 <NavItem>
-                    <NavLink href="/NewOrder"><img src={NavLink ? NewOrderActive : NewOrderUnactive}
+                    <NavLink href="/"><img src={NavLink ? NewOrderActive : NewOrderUnactive}
                         alt="" />Nueva Orden</NavLink>
                 </NavItem>
                 <NavItem>
