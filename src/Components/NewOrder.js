@@ -61,7 +61,8 @@ export const NewOrder = () => {
             numberCel: document.getElementById('numberCel').value,
             equipo: document.getElementById('equipo').value,
             date: moment().format('LL'),
-            problemaEquipo: document.getElementById('problema').value
+            problemaEquipo: document.getElementById('problema').value,
+            state: 1
         })
     }
 

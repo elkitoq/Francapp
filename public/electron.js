@@ -3,13 +3,16 @@ const path = require('path')
 const isDev = require('electron-is-dev')
 
 function createWindow() {
+    const alto = 768;
+    const ancho = 1366;
+
     const win = new BrowserWindow({
-        width: 1366,
-        height: 768,
-        maxHeight: 768,
-        maxWidth: 1366,
-        minHeight: 768,
-        minWidth: 1366,
+        width: ancho,
+        height: alto,
+        maxHeight: alto,
+        maxWidth: ancho,
+        minHeight: alto,
+        minWidth: ancho,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }

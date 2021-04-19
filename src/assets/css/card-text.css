@@ -2,17 +2,15 @@
     height: 100vh;
 }
 
-.conten-workorder .col-content-card .list-card{
-    overflow: scroll;
-}
+#no-scroll1::-webkit-scrollbar {
+    width: auto;
+  }
+  #no-scroll1::-webkit-scrollbar-track, #no-scroll1::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
 
 .conten-workorder .col-content-card .row-nav{
     width: 100%;
-}
-
-.conten-workorder .col-content-card .row-nav .link{
-    text-decoration: none;
-    color: #d81d1d;
 }
 
 .card-body{
