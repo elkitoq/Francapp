@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: SK-MODERNIST-BOLD;
+  src: url(./assets/fonts/SK-MODERNIST-BOLD.OTF);
+
+  font-family: SK-MODERNIST-MONO;
+  src: url(./assets/fonts/SK-MODERNIST-MONO.OTF);
+
+  font-family: SK-MODERNIST-REGULAR;
+  src: url(./assets/fonts/SK-MODERNIST-REGULAR.OTF);
+
+  font-family: NunitoSans-Bold;
+  src: url(./assets/fonts/NunitoSans-Bold.ttf);
+
+  font-family: NunitoSans-Regular;
+  src: url(./assets/fonts/NunitoSans-Regular.ttf);
+} 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
