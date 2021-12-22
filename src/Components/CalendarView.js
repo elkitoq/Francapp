@@ -8,15 +8,20 @@ export const Calendario = () => {
 
     const [dateJobs, setDateJobs] = useState([]);
 
-    useEffect(async () => {
-        let jobs = await getListJobs();
+    useEffect(() => {
 
-        setDateJobs(jobs)
+        async function getJobs() {
+            let jobs = await getListJobs();
+
+            setDateJobs(jobs)
+        }
+
+        getJobs()
+
     }, [])
 
     return (
-        <Calendar className="calendario"
-            events={dateJobs}
+        <Calendar events={dateJobs}
         />
     );
 }

@@ -3,6 +3,7 @@ import { FormLabel } from '../Components/FormLabel.js'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { addWorkOrdertoDb } from '../Service/ServiceLocalBase.js'
+import '../assets/css/content-flex.css';
 
 
 export const NewOrder = () => {
@@ -80,29 +81,33 @@ export const NewOrder = () => {
 
     return (
         <Row className="content-newOrder">
-            <Col className="band-yellow" sm="2"></Col>
-            <Col className="labels-newOrder" sm="4">
-                <Form className="form-labels">
-                    <FormLabel nombre="Nombre y Apellido" />
-                    <FormLabel nombre="Email" />
-                    <FormLabel nombre="Numero de Telefono" />
-                    <FormLabel nombre="Equipo" />
-                    <FormLabel nombre="Fecha de entrega" />
-                    <FormLabel nombre="Problema de equipo" />
-                </Form>
-            </Col>
-            <Col className="content-input-newOrder" sm="5">
-                <Form className="form-input">
-                    <Input className="imputs-newOrder" type="text" name="name-apellido" id="nombre" />
-                    <Input className="imputs-newOrder" type="email" name="email" id="email" />
-                    <Input className="imputs-newOrder" type="text" name="number-cel" id="numberCel" />
-                    <Input className="imputs-newOrder" type="text" name="equipo" id="equipo" />
-                    <Input className="imputs-newOrder" type="date" name="fechaEntrega" id="fechaEntrega" />
-                    <Input className="imputs-newOrder" type="textarea" name="problema" id="problema" />
-                    <Button className="btn-cancelar" onClick={clearImputs}>Cancelar</Button>
-                    <Button className="btn-crear" onClick={addWorkOrder}>Crear</Button>
-                </Form>
-            </Col>
+            <div className="content-newOrder-inner">
+                <Col className="band-yellow" sm="2"></Col>
+                <Col className="labels-newOrder" sm="4">
+                    <Form className="form-labels">
+                        <FormLabel nombre="Nombre y Apellido" />
+                        <FormLabel nombre="Email" />
+                        <FormLabel nombre="Numero de Telefono" />
+                        <FormLabel nombre="Equipo" />
+                        <FormLabel nombre="Fecha de entrega" />
+                        <FormLabel nombre="Problema de equipo" />
+                    </Form>
+                </Col>
+                <Col className="content-input-newOrder" sm="5">
+                    <Form className="form-input">
+                        <Input className="imputs-newOrder" type="text" name="name-apellido" id="nombre" />
+                        <Input className="imputs-newOrder" type="email" name="email" id="email" />
+                        <Input className="imputs-newOrder" type="text" name="number-cel" id="numberCel" />
+                        <Input className="imputs-newOrder" type="text" name="equipo" id="equipo" />
+                        <Input className="imputs-newOrder" type="date" name="fechaEntrega" id="fechaEntrega" />
+                        <Input className="imputs-newOrder textArea" type="textarea" name="problema" id="problema" />
+                        <div className="buttons-container">
+                            <Button className="btn-cancelar" onClick={clearImputs}>Cancelar</Button>
+                            <Button className="btn-crear" id="btnSendMail" onClick={addWorkOrder}>Crear</Button>
+                        </div>
+                    </Form>
+                </Col>
+            </div>
         </Row>
     )
 }

@@ -1,8 +1,10 @@
 import { Input, InputGroup, Button, Row, Col } from 'reactstrap'
 import { useState } from 'react'
 import { searchDocument } from '../Service/ServiceLocalBase.js'
+// import { ModalSearch } from '../Components/ModalSearch'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../assets/css/content.css'
+// import '../assets/css/content.css'
+import '../assets/css/content-flex.css';
 import lupa from '../assets/icons/icon-search.png'
 
 export const Navbar = () => {
@@ -16,7 +18,7 @@ export const Navbar = () => {
     const submitSearchDoc = async (event) => {
         event.preventDefault()
         let docSearch = await searchDocument(search)
-        console.log(docSearch)
+
     }
 
     return (

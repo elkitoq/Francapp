@@ -1,9 +1,7 @@
-import { FormGroup, Label } from 'reactstrap'
+import { Label } from 'reactstrap'
 
 export const FormLabel = ({ nombre }) => {
     return (
-        <FormGroup row>
-            <Label>{nombre}</Label>
-        </FormGroup>
+        <Label>{nombre}</Label>
     )
 }

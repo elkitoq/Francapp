@@ -19,7 +19,7 @@ export const ButtonTable = ({ props }) => {
     }
 
     return (
-        <Button size='sm' color='success' onClick={(e) => viewProblem(props.problemaEquipo)} >
+        <Button style={{ width: "50px" }} size='sm' color='info' onClick={(e) => viewProblem(props.problemaEquipo)} >
             Ver
         </Button>
     )

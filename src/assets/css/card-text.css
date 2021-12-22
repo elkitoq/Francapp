@@ -10,9 +10,9 @@
 }
 
 .content-workorder .col-content .row-nav .buttonGroup{
-    margin-top: 2rem;
-    margin-left: 13rem;
-    width: 50%;
+    margin-top: 5rem;
+    margin-left: 7rem;
+    width: 80%;
 }
 
 .content-workorder .col-content .row-nav .buttonGroup .buttonTable{
@@ -20,16 +20,40 @@
     margin-bottom: 0.5rem;
     margin-left: 1rem;
     width: 50%;
-    background-color: transparent;
-    color: black;
+    background-color: white;
+    color: grey;
     border: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 21px;
     font-weight: 600;
-    opacity: 0.5;
+    opacity: 0.8;
 }
-
 .content-workorder .col-content .row-nav .buttonGroup .buttonTable:hover{
     opacity: 1;
+    color: black;
+} 
+
+.content-workorder .col-content .row-nav .buttonGroup .buttonTable:visited{
+    color: black;
+    background-color:aqua;
+    border: none;
 }
+
+#no-scroll1 div table thead{
+    
+    position: sticky !important;
+}
+
+#no-scroll1 div table tbody td{
+    font-size: 12px;
+}
+
+.css-yk16xz-control{
+    width: 80px !important;
+    height: 30px !important;
+    margin-right: 5px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: .2rem
+    }
 

@@ -7,18 +7,20 @@ import { NewOrder } from './Views/NewOrder.js'
 import { Workorders } from './Views/Workorders.js'
 import { Calendar } from './Views/Calendar.js'
 import { Options } from './Views/Options.js'
-import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 
 
 function App() {
+
+  let rute = window.location.pathname
+
   return (
     <Router>
       <Container className="themed-container" fluid={true} >
         <Row>
           <Sidebar />
           <Col>
-            <Navbar />
+            {rute === '/Calendar' || rute === '/Options' ? <></> : <Navbar />}
             <Switch>
               <Route path="/" exact="true" component={NewOrder} />
               <Route path="/Workorders" exact="true" component={Workorders} />

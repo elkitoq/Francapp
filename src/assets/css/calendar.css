@@ -1,4 +1,28 @@
-.calendario{
+.calendarWrapper{
     width: 100% !important;
-    height: 100% !important;
+    height: auto;
+    margin-top: 2rem !important;
+}
+
+.modeWrapper{
+    display: none;
+}
+
+.calendarWrapper .calendarHeader h1{
+    font-size:20px;
+    margin-left: 30rem;
+    margin-top: 0rem !important;
+}
+
+.calendarWrapper .calendarHeader .calendarHeaderButtons{
+    margin: 0;
+}
+
+.eventTitle{
+    color: black !important;
+    font-size: 0.7rem !important;
+}
+
+.dayCellEvent{
+    height:20px !important
 }

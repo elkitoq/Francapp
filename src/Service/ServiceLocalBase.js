@@ -1,5 +1,6 @@
 import LocalBase from 'localbase'
 import moment from 'moment'
+const { ipcRenderer } = window.require('electron');
 
 //create new data base
 let db = new LocalBase('db')
@@ -18,11 +19,22 @@ export async function addWorkOrdertoDb(work) {
         email: work.email,
         numberCel: work.numberCel,
         equipo: work.equipo,
-        date: moment().format('LL'),
+        date: moment().format('L'),
         deliveryDate: work.fechaEntrega,
         problemaEquipo: work.problemaEquipo,
-        state: 1
+        state: '1'
     })
+
+    let emailData = {
+        id: id,
+        name: work.name,
+        email: work.email,
+        equipo: work.equipo,
+        deliveryDate: work.fechaEntrega,
+        state: work.state,
+    }
+
+    ipcRenderer.send('sendMail', emailData)
 }
 
 //function create id
@@ -56,6 +68,7 @@ export async function getListWorks(state) {
     try {
         let listWork = await db.collection('workorder').orderBy('date').get()
         let works = listWork.filter(work => work.state === state)
+
         return works
     }
     catch (error) {
@@ -72,6 +85,12 @@ export async function updateWork(id, newState) {
 
 //search document whit searchbar
 export async function searchDocument(id) {
+
+    if (id.includes("#")) {
+        id = id.slice(1, id.length)
+
+    }
+
     try {
         let searchDocByID = await db.collection('workorder').doc({ id: id }).get()
 
@@ -98,7 +117,7 @@ export async function getListJobs() {
                     color: '#f9b208',
                     from: work.deliveryDate,
                     to: work.deliveryDate,
-                    title: `${work.name} ${work.equipo}`
+                    title: `${work.name} // ${work.equipo} // ${work.problemaEquipo}`
                 }
 
                 jobs.push(workDate)
@@ -108,7 +127,7 @@ export async function getListJobs() {
                     color: '#1ccb9e',
                     from: work.deliveryDate,
                     to: work.deliveryDate,
-                    title: `${work.name} ${work.equipo}`
+                    title: `${work.name} // ${work.equipo} // ${work.problemaEquipo}`
                 }
 
                 jobs.push(workDate)
@@ -118,11 +137,11 @@ export async function getListJobs() {
                     color: '#9ede73',
                     from: work.deliveryDate,
                     to: work.deliveryDate,
-                    title: `${work.name} ${work.equipo}`
+                    title: `${work.name} // ${work.equipo} // ${work.problemaEquipo}`
                 }
                 jobs.push(workDate)
             }
-
+            return null
         })
 
         return jobs
