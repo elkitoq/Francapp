@@ -1,52 +1,59 @@
-.conten-workorder .col-content-card{
+.content-workorder .col-content{
     height: 100vh;
 }
 
 #no-scroll1::-webkit-scrollbar {
     width: auto;
-  }
-  #no-scroll1::-webkit-scrollbar-track, #no-scroll1::-webkit-scrollbar-thumb {
+}
+#no-scroll1::-webkit-scrollbar-track, #no-scroll1::-webkit-scrollbar-thumb {
     background: transparent;
-  }
-
-.conten-workorder .col-content-card .row-nav{
-    width: 100%;
 }
 
-.card-body{
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 2px solid #10E57A;
-    opacity: 1;
+.content-workorder .col-content .row-nav .buttonGroup{
+    margin-top: 5rem;
+    margin-left: 7rem;
     width: 80%;
-    height: 11.5rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
 }
 
-.title{
-    font-size: 24px;
-    letter-spacing: 0.14px;
-    color: #282751;
-    opacity: 1;
-}
-
-.nombre{
+.content-workorder .col-content .row-nav .buttonGroup .buttonTable{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    width: 50%;
+    background-color: white;
+    color: grey;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 21px;
-    letter-spacing: 0.13px;
-    color: #282751;
-    opacity: 0.72;
+    font-weight: 600;
+    opacity: 0.8;
 }
-
-.fecha{
-    font-size: 21px;
-    letter-spacing: 0.13px;
-    color: #282751;
-    opacity: 0.41;
-}
-
-.numeroOrder{
-    letter-spacing: 0.11px;
-    color: #282751;
+.content-workorder .col-content .row-nav .buttonGroup .buttonTable:hover{
     opacity: 1;
+    color: black;
+} 
+
+.content-workorder .col-content .row-nav .buttonGroup .buttonTable:visited{
+    color: black;
+    background-color:aqua;
+    border: none;
 }
+
+#no-scroll1 div table thead{
+    
+    position: sticky !important;
+}
+
+#no-scroll1 div table tbody td{
+    font-size: 12px;
+}
+
+.css-yk16xz-control{
+    width: 80px !important;
+    height: 30px !important;
+    margin-right: 5px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: .2rem
+    }
+

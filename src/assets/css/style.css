@@ -6,10 +6,10 @@
     position: -webkit-sticky;  
     position: sticky;
     top: 0; 
-
 }
 
 .logo-img{
+    margin-top: -1.5rem;
     padding: 5px;
     width: 100%;   
 }
@@ -18,7 +18,7 @@
     padding: auto;
     text-decoration: none;
     color: black;
-    
+    margin-bottom: 0.5rem;
 }
 
 .col-sidebar .sidebar a:hover{
@@ -29,6 +29,7 @@
 }
 
 .col-sidebar .sidebar a img{
+    margin-top: 1rem;
     margin-right: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
